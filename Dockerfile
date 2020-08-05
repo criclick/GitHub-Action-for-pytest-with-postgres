@@ -5,7 +5,7 @@ LABEL "com.github.actions.description"="Run pytest commands"
 LABEL "com.github.actions.icon"="upload-cloud"
 LABEL "com.github.actions.color"="yellow"
 RUN apk update && apk add libpq
-RUN apk add --no-cache .build-deps gcc python3-dev musl-dev postgresql-dev libpq-dev postgresql postgresql-contrib bash
+RUN apk add --no-cache gcc python3-dev musl-dev postgresql-dev libpq-dev postgresql postgresql-contrib bash
 
 RUN pip install --upgrade pip
 RUN pip install pytest
