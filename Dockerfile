@@ -8,10 +8,11 @@ LABEL "com.github.actions.color"="yellow"
 RUN apk update && apk add libpq postgresql postgresql-contrib
 
 # Installing build dependencies
-RUN apk add --virtual .build-deps gcc python3-dev musl-dev postgresql-dev bash
+RUN apk add --no-cache  --virtual .build-deps gcc musl-dev python3-dev musl-dev postgresql-dev bash
 
 # Installing and build python module
 RUN pip install psycopg2
+RUN pip install cython
 
 # Delete build dependencies
 RUN apk del .build-deps
