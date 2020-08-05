@@ -5,19 +5,12 @@ LABEL "com.github.actions.description"="Run pytest commands"
 LABEL "com.github.actions.icon"="upload-cloud"
 LABEL "com.github.actions.color"="yellow"
 # Installing client libraries and any other package you need
-RUN apk update && apk add libpq postgresql postgresql-contrib
 
 # Installing build dependencies
-RUN apk add --no-cache  --virtual .build-deps gcc musl-dev python3-dev musl-dev postgresql-dev bash
+RUN apk update && apk add --no-cache  musl-dev python3-dev musl-dev postgresql-dev bash libpq postgresql postgresql-contrib linux-headers gcc
 
-# Installing and build python module
-RUN pip install psycopg2
-RUN pip install cython
-
-# Delete build dependencies
-RUN apk del .build-deps
 RUN pip install --upgrade pip
-RUN pip install pytest
+RUN pip install pytest psycopg2 cython
 RUN python --version ; pip --version ; pytest --version
 
 COPY entry.sh /
