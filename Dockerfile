@@ -7,7 +7,7 @@ LABEL "com.github.actions.color"="yellow"
 # Installing client libraries and any other package you need
 
 # Installing build dependencies
-RUN apt-get update && apt-get install  musl-dev python3-dev musl-dev bash libpq-dev libpq-dev postgresql postgresql-contrib gcc
+RUN apt-get update && apt-get -y install  musl-dev python3-dev musl-dev bash libpq-dev libpq-dev postgresql postgresql-contrib gcc
 
 RUN pip install --upgrade pip
 RUN pip install pytest psycopg2 cython
