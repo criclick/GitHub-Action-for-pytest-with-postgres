@@ -5,7 +5,7 @@ LABEL "com.github.actions.description"="Run pytest commands"
 LABEL "com.github.actions.icon"="upload-cloud"
 LABEL "com.github.actions.color"="yellow"
 # Installing client libraries and any other package you need
-RUN apk update && apk add libpq libpq-dev postgresql postgresql-contrib
+RUN apk update && apk add libpq postgresql postgresql-contrib
 
 # Installing build dependencies
 RUN apk add --virtual .build-deps gcc python3-dev musl-dev postgresql-dev bash
