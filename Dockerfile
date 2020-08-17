@@ -1,4 +1,4 @@
-FROM python:3.7.8-stretch
+FROM python:3.8-buster
 
 LABEL "com.github.actions.name"="GitHub Action for pytest"
 LABEL "com.github.actions.description"="Run pytest commands"
